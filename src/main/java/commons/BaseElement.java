@@ -35,8 +35,6 @@ public class BaseElement extends BasePage {
         return getElementText(driver, UserBaseElementUI.DYNAMIC_ERROR_MESSAGE_BY_ID, attributeID);
     }
 
-
-
     public String getMessageByClass(WebDriver driver, String attributeClass) {
         waitForElementVisible(driver, UserBaseElementUI.DYNAMIC_MESSAGE_BY_CLASS, attributeClass);
         return getElementText(driver, UserBaseElementUI.DYNAMIC_MESSAGE_BY_CLASS, attributeClass);

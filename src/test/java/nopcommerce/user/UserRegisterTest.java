@@ -123,9 +123,9 @@ public class UserRegisterTest extends BaseTest {
         Assert.assertEquals(userRegisterPage.getRegisterMessageSusscessfully(),"Your registration completed");
     }
 
-    @AfterClass
+    @AfterClass(alwaysRun = true)
     public void afterClass(){
-        driver.quit();
+        closeBrowserDriver();
     }
 
     public int generateFakeNumber(){

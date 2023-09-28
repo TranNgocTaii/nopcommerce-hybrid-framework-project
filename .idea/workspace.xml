@@ -4,46 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="deee99be-3851-4f75-8a02-5c99539af54c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commons/BaseElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commons/BasePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commons/BaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commons/GlobalConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commons/VerificationFailures.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserAddressesPageObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserChangePasswordPageObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserHomePageObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserLoginPageObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserMyAccountPageObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserPageGeneratorManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserProductDetailPageObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserProductReviewPageObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserRegisterPageObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageUIs/user/UserAddressesPageUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageUIs/user/UserBaseElementUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageUIs/user/UserChangePasswordPageUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageUIs/user/UserHomePageUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageUIs/user/UserLoginPageUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageUIs/user/UserMyAccountPageUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageUIs/user/UserProductDetailPageUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageUIs/user/UserProductReviewPageUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pageUIs/user/UserRegisterPageUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/reportConfigs/ExtentManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/reportConfigs/ExtentTestListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/reportConfigs/ExtentTestManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/reportConfigs/ReportNGListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utilities/logs/Log.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/runNopcommerce.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserLoginTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserMyAccountTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserRegisterTest.java" afterDir="false" />
+    <list default="true" id="deee99be-3851-4f75-8a02-5c99539af54c" name="Changes" comment="Register_Login_MyAccount_Function">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commons/BaseElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commons/BaseElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commons/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commons/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commons/GlobalConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commons/GlobalConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserLoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserMyAccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserMyAccountTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserRegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserRegisterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,18 +34,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Master",
-    "last_opened_file_path": "/Users/tranngoctai/IdeaProjects/Selenium_Online_28/08 - Real Project/nopcommerce-hybrid-framework-project",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/tranngoctai/IdeaProjects/Selenium_Online_28/08 - Real Project/nopcommerce-hybrid-framework-project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="/Users/tranngoctai/IdeaProjects/Selenium_Online_28/08 - Real Project/nopcommerce-hybrid-framework-project/src/main/resources/runNopcommerce.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="nopcommerce-hybrid-framework-project" />
@@ -105,5 +73,16 @@
       <updated>1695710783569</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

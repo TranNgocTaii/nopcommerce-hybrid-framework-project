@@ -112,9 +112,9 @@ public class UserLoginTest extends BaseTest {
         userHomePage = userLoginPage.clickToLoginButton();
     }
 
-    @AfterClass
+    @AfterClass(alwaysRun = true)
     public void afterClass(){
-        driver.quit();
+        closeBrowserDriver();
     }
 
     public int generateFakeNumber(){

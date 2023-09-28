@@ -282,9 +282,9 @@ public class UserMyAccountTest extends BaseTest {
         Assert.assertTrue(userProductReviewPage.isElementDisplayed(driver, UserProductReviewPageUI.REVIEW_TEXT, "This computer is good"));
     }
 
-    @AfterClass
+    @AfterClass(alwaysRun = true)
     public void afterClass(){
-        driver.quit();
+        closeBrowserDriver();
     }
 
     public int generateFakeNumber() {
