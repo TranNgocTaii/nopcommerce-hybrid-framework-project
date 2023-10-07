@@ -5,9 +5,9 @@
 
     <listeners>
         <listener class-name="reportConfigs.ExtentTestListener"></listener>
-        <listener class-name="reportConfigs.ReportNGListener"></listener>
-        <listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
-        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>
+<!--        <listener class-name="reportConfigs.ReportNGListener"></listener>-->
+<!--        <listener class-name="org.uncommons.reportng.HTMLReporter"></listener>-->
+<!--        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>-->
 
     </listeners>
 
@@ -17,7 +17,19 @@
             <class name = "nopcommerce.user.UserRegisterTest"/>
             <class name = "nopcommerce.user.UserLoginTest"/>
             <class name = "nopcommerce.user.UserMyAccountTest"/>
-
+            <class name = "nopcommerce.user.UserSearchTest"/>
         </classes>
     </test>
+
+<!--    <test name = "Run on FIREFOX">-->
+<!--        <parameter name="browser" value="firefox"></parameter>-->
+<!--        <classes>-->
+<!--            <class name = "nopcommerce.user.UserRegisterTest"/>-->
+<!--            &lt;!&ndash;            <class name = "nopcommerce.user.UserLoginTest"/>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <class name = "nopcommerce.user.UserMyAccountTest"/>&ndash;&gt;-->
+<!--        </classes>-->
+<!--    </test>-->
+
+
+
 </suite>

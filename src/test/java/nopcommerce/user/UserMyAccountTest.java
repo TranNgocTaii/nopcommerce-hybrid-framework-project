@@ -28,7 +28,7 @@ public class UserMyAccountTest extends BaseTest {
     private UserProductReviewPageObject userProductReviewPage;
     private String firstName, lastName, email, companyName, emailAddress;
     private String name, phoneNumber, faxNumber, addressCompany, address1, addressCity, country, addressZipPostalCode, addressFirstName, addressLastName;
-    private String oldPassword, newPassword, confirmPassword;
+    static String oldPassword, newPassword, confirmPassword;
     private String day, month, year;
     @Parameters({"browser", "url"})
     @BeforeClass

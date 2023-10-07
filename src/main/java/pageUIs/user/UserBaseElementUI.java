@@ -1,6 +1,8 @@
 package pageUIs.user;
 
 public class UserBaseElementUI {
+    public static final String ADVANCED_SEARCH_CHECKBOX = "xpath=//input[@id='advs']";
+    public static final String DYNAMIC_VALUE_BY_TITLE = "xpath=//div[@class='product-item']//div[@class='picture']//a[@title='%s']";
     public static final String DYNAMIC_DROPDOWN_BY_NAME = "xpath=//select[@name='%s']";
     public static final String DYNAMIC_LINK_BY_CLASS = "xpath=//div[@class='header-links']//a[@class='%s']";
     public static final String DYNAMIC_TEXTBOX_BY_ID = "xpath=//input[@id='%s']";
@@ -15,6 +17,9 @@ public class UserBaseElementUI {
     public static final String CLOSE_ICON = "xpath=//span[@title='Close']";
     public static final String DYNAMIC_TOP_MENU_BY_TEXT = "xpath=//ul[@class='top-menu notmobile']//a[contains(text(),'%s')]";
     public static final String DYNAMIC_SECOND_MENU_BY_TEXT = "xpath=//ul[@class='top-menu notmobile']//a[contains(text(),'%s')]//following-sibling::ul//a[contains(text(),'%s')]";
+    public static final String DYNAMIC_VALUE_BY_TEXT = "xpath=//div[@class='footer-block customer-service']//a[text()='%s']";
+    public static final String AUTOMATICALLY_SEARCH_SUB_CATEGORIES_CHECKBOX = "xpath=//input[@id='isc']";
+
 
 
 

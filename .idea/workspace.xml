@@ -4,14 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="deee99be-3851-4f75-8a02-5c99539af54c" name="Changes" comment="Register_Login_MyAccount_Function">
+    <list default="true" id="deee99be-3851-4f75-8a02-5c99539af54c" name="Changes" comment="Custom close Browser Driver">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserSearchPageObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pageUIs/user/UserSearchPageUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utilities/helpers/DataHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserSearchTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/commons/BaseElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commons/BaseElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commons/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commons/BasePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/commons/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commons/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commons/GlobalConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commons/GlobalConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserLoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserMyAccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserMyAccountTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserRegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserRegisterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserPageGeneratorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserPageGeneratorManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageUIs/user/UserBaseElementUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageUIs/user/UserBaseElementUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/reportConfigs/ExtentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/reportConfigs/ExtentManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/runNopcommerce.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/runNopcommerce.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +49,7 @@
     &quot;last_opened_file_path&quot;: &quot;/Users/tranngoctai/IdeaProjects/Selenium_Online_28/08 - Real Project/nopcommerce-hybrid-framework-project&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
   <component name="RunManager">
@@ -72,6 +78,15 @@
       <option name="presentableId" value="Default" />
       <updated>1695710783569</updated>
     </task>
+    <task id="LOCAL-00001" summary="Custom close Browser Driver">
+      <option name="closed" value="true" />
+      <created>1695931079709</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695931079709</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -84,5 +99,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Custom close Browser Driver" />
+    <option name="LAST_COMMIT_MESSAGE" value="Custom close Browser Driver" />
   </component>
 </project>

@@ -18,7 +18,7 @@ public class ExtentManager extends ExtentTestManager{
         reporter.config().setTheme(Theme.DARK);
 
         extentReports.attachReporter(reporter);
-        extentReports.setSystemInfo("Company", "");
+        extentReports.setSystemInfo("Company", "Test");
         extentReports.setSystemInfo("Project", "NopCommerce");
         extentReports.setSystemInfo("Team", "VN");
         extentReports.setSystemInfo("JDK version", GlobalConstants.JAVA_VERSION);

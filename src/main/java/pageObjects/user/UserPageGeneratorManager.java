@@ -24,6 +24,10 @@ public class UserPageGeneratorManager {
         return new UserMyAccountPageObject(driver);
     }
 
+    public static UserSearchPageObject getUserSearchPage(WebDriver driver) {
+        return new UserSearchPageObject(driver);
+    }
+
     public static UserChangePasswordPageObject getUserChangePasswordPage(WebDriver driver) {
         return new UserChangePasswordPageObject(driver);
     }
@@ -35,4 +39,5 @@ public class UserPageGeneratorManager {
     public static UserProductReviewPageObject getUserProductReviewPage(WebDriver driver) {
         return new UserProductReviewPageObject(driver);
     }
+
 }

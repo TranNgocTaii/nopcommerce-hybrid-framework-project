@@ -30,6 +30,11 @@ public class BaseElement extends BasePage {
         clickToElement(driver, UserBaseElementUI.DYNAMIC_BUTTON_BY_TEXT, textValue);
     }
 
+    public boolean isTheProductDislayedByTitle(WebDriver driver, String title) {
+        waitForElementClickable(driver, UserBaseElementUI.DYNAMIC_VALUE_BY_TITLE, title);
+        return isElementDisplayed(driver, UserBaseElementUI.DYNAMIC_VALUE_BY_TITLE, title);
+    }
+
     public String getErrorMessageById(WebDriver driver, String attributeID) {
         waitForElementVisible(driver, UserBaseElementUI.DYNAMIC_ERROR_MESSAGE_BY_ID, attributeID);
         return getElementText(driver, UserBaseElementUI.DYNAMIC_ERROR_MESSAGE_BY_ID, attributeID);
@@ -110,6 +115,17 @@ public class BaseElement extends BasePage {
                 return UserPageGeneratorManager.getUserHomePage(driver);
             default:
                 throw new RuntimeException("Can not click on second tab");
+        }
+    }
+
+    public Object selectOptionAtCustomerServiceFooter(WebDriver driver, String pageName){
+        waitForElementClickable(driver, UserBaseElementUI.DYNAMIC_VALUE_BY_TEXT, pageName);
+        clickToElement(driver, UserBaseElementUI.DYNAMIC_VALUE_BY_TEXT, pageName);
+        switch (pageName){
+            case "Search":
+                return UserPageGeneratorManager.getUserSearchPage(driver);
+            default:
+                throw new RuntimeException("Invalid page name at footer");
         }
     }
 

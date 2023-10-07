@@ -89,6 +89,8 @@ public class BasePage {
         waitForAlertPresence(driver).sendKeys(textValue);
     }
 
+
+
     protected void switchToWindowById(WebDriver driver, String windowID) {
         Set<String> allWindowIDs = driver.getWindowHandles();
         for (String id : allWindowIDs) {
