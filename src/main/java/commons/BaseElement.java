@@ -1,8 +1,14 @@
 package commons;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import pageObjects.user.UserPageGeneratorManager;
 import pageUIs.user.UserBaseElementUI;
+import pageUIs.user.UserHomePageUI;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class BaseElement extends BasePage {
 
@@ -127,6 +133,96 @@ public class BaseElement extends BasePage {
             default:
                 throw new RuntimeException("Invalid page name at footer");
         }
+    }
+
+    public boolean isProductNameSortByAscending(WebDriver driver) {
+        ArrayList<String> productUIList = new ArrayList<String>();
+
+        List<WebElement> productNameText = getListWebElement(driver, UserBaseElementUI.PRODUCT_NAME_TEXT);
+
+        for (WebElement productName : productNameText){
+            productUIList.add(productName.getText());
+        }
+
+        ArrayList<String> productSortList = new ArrayList<String>();
+        for (String product : productUIList){
+            productSortList.add(product);
+        }
+
+        Collections.sort(productSortList);
+
+        return productSortList.equals(productUIList);
+    }
+
+    public boolean isProductNameSortByDescending(WebDriver driver) {
+        ArrayList<String> productUIList = new ArrayList<String>();
+
+        List<WebElement> productNameText = getListWebElement(driver, UserBaseElementUI.PRODUCT_NAME_TEXT);
+
+        for (WebElement productName : productNameText){
+            productUIList.add(productName.getText());
+        }
+
+        ArrayList<String> productSortList = new ArrayList<String>();
+        for (String product : productUIList){
+            productSortList.add(product);
+        }
+
+        Collections.sort(productSortList);
+
+        Collections.reverse(productSortList);
+
+        return productSortList.equals(productUIList);
+    }
+
+    public boolean isProductPriceSortByAscending(WebDriver driver) {
+        ArrayList<String> productUIList = new ArrayList<String>();
+
+        List<WebElement> productPriceText = getListWebElement(driver, UserBaseElementUI.PRODUCT_PRICE_TEXT);
+
+        for (WebElement productPrice : productPriceText){
+            productUIList.add(String.valueOf(productPrice.getText().replace("$", "")));
+        }
+
+        ArrayList<String> productSortList = new ArrayList<String>();
+        for (String product : productUIList){
+            productSortList.add(product);
+        }
+
+        Collections.sort(productSortList);
+
+        return productSortList.equals(productUIList);
+
+    }
+
+    public boolean isProductPriceSortByDescending(WebDriver driver) {
+        ArrayList<String> productUIList = new ArrayList<String>();
+
+        List<WebElement> productPriceText = getListWebElement(driver, UserBaseElementUI.PRODUCT_PRICE_TEXT);
+
+        for (WebElement productPrice : productPriceText){
+            productUIList.add(String.valueOf(productPrice.getText().replace("$", "")));
+        }
+
+        ArrayList<String> productSortList = new ArrayList<String>();
+        for (String product : productUIList){
+            productSortList.add(product);
+        }
+
+        Collections.sort(productSortList);
+
+        Collections.reverse(productSortList);
+
+        return productSortList.equals(productUIList);
+    }
+
+    public boolean isProductNumberLessThanOrEqualDisplayed(WebDriver driver, int numberValue) {
+        List<WebElement> productNameText = getListWebElement(driver, UserBaseElementUI.PRODUCT_NAME_TEXT);
+        waitForAllElementsVisible(driver, UserBaseElementUI.PRODUCT_NAME_TEXT);
+        if (productNameText.size()<= numberValue){
+            return true;
+        } else
+            throw new RuntimeException("Product Number is greater than " + numberValue);
     }
 
 

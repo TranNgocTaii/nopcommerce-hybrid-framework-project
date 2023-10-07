@@ -23,10 +23,10 @@ public class UserRegisterTest extends BaseTest {
     private String invalidEmail;
     static String validEmail, validPassword, lastName, firstName, invalidPassword, invalidConfirmPassword;
 
-    @Parameters({"browser","url"})
+    @Parameters({"browser","environment"})
     @BeforeClass
-    public void beforeClass(String browserName, String appURL) {
-        driver = getBrowserDriver(browserName, appURL);
+    public void beforeClass(String browserName, String environmentName) {
+        driver = getBrowserDriver(browserName, environmentName);
 
         userHomePage = UserPageGeneratorManager.getUserHomePage(driver);
 

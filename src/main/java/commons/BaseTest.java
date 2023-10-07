@@ -26,7 +26,7 @@ public class BaseTest {
         return this.driver;
     }
 
-    protected WebDriver getBrowserDriver(String browserName, String appURL){
+    protected WebDriver getBrowserDriver(String browserName, String environmentName){
         if (browserName.equals("chrome")) {
             WebDriverManager.chromedriver().setup();
 //            System.setProperty("webdriver.chrome.args","--disable-logging");
@@ -34,7 +34,7 @@ public class BaseTest {
 //            File file = new File(GlobalConstants.PROJECT_PATH + "/browserExtensions/extension_2_0_13_0.crx");
             ChromeOptions options = new ChromeOptions();
             selectLanguageForChrome(options, "en");
-            disableSavePasswordInChrome(options);
+            disableSavePasswordAndSaveAddressInChrome(options);
             options.addArguments("--disable-notifications");
             options.addArguments("--disable-geolocation");
             options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
@@ -88,9 +88,35 @@ public class BaseTest {
             throw new RuntimeException("Browser name invalid");
         }
         driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
-        driver.get(appURL);
+        driver.get(getEnvironmentUrl(environmentName));
         driver.manage().window().maximize();
         return driver;
+    }
+
+    protected String getEnvironmentUrl(String environmentName){
+        String envUrl = null;
+        EnvironmentList environment = EnvironmentList.valueOf(environmentName.toUpperCase());
+        switch (environment) {
+            case DEV:
+                envUrl = "https://demo.nopcommerce.com/";
+                break;
+            case TESTING:
+                envUrl = "https://testing.nopcommerce.com/";
+                break;
+            case STAGING:
+                envUrl = "https://staging.nopcommerce.com/";
+                break;
+            case PRE_PROD:
+                envUrl = "https://preprod.nopcommerce.com/";
+                break;
+            case PROD:
+                envUrl = "https://prod.nopcommerce.com/";
+                break;
+            default:
+                envUrl = null;
+                break;
+        }
+        return envUrl;
     }
 
     protected boolean verifyTrue(boolean condition) {
@@ -199,7 +225,7 @@ public class BaseTest {
         }
     }
 
-    private void disableSavePasswordInChrome (ChromeOptions options) {
+    private void disableSavePasswordAndSaveAddressInChrome(ChromeOptions options) {
         Map<String, Object> chrome_prefs = new HashMap<String, Object>();
         chrome_prefs.put("credentials_enable_service", false);
         chrome_prefs.put("profile.password_manager_enabled", false);

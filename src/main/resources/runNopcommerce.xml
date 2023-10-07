@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name ="NopCommerce">
-    <parameter name="url" value="https://demo.nopcommerce.com/"></parameter>
+    <parameter name="environment" value="DEV"></parameter>
 
     <listeners>
         <listener class-name="reportConfigs.ExtentTestListener"></listener>
@@ -18,6 +18,7 @@
             <class name = "nopcommerce.user.UserLoginTest"/>
             <class name = "nopcommerce.user.UserMyAccountTest"/>
             <class name = "nopcommerce.user.UserSearchTest"/>
+            <class name = "nopcommerce.user.UserSortDisplayPagingTest"/>
         </classes>
     </test>
 

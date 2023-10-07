@@ -22,10 +22,10 @@ public class UserSearchTest extends BaseTest {
     private UserLoginPageObject userLoginPage;
     private UserSearchPageObject userSearchPage;
 
-    @Parameters({"browser", "url"})
+    @Parameters({"browser", "environment"})
     @BeforeClass
-    public void beforeClass(String browserName, String appURL) {
-        driver = getBrowserDriver(browserName, appURL);
+    public void beforeClass(String browserName, String environmentName) {
+        driver = getBrowserDriver(browserName, environmentName);
 
         userHomePage = UserPageGeneratorManager.getUserHomePage(driver);
 

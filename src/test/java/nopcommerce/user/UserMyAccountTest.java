@@ -30,10 +30,10 @@ public class UserMyAccountTest extends BaseTest {
     private String name, phoneNumber, faxNumber, addressCompany, address1, addressCity, country, addressZipPostalCode, addressFirstName, addressLastName;
     static String oldPassword, newPassword, confirmPassword;
     private String day, month, year;
-    @Parameters({"browser", "url"})
+    @Parameters({"browser", "environment"})
     @BeforeClass
-    public void beforeClass(String browserName, String appURL) {
-        driver = getBrowserDriver(browserName, appURL);
+    public void beforeClass(String browserName, String environmentName) {
+        driver = getBrowserDriver(browserName, environmentName);
 
         userHomePage = UserPageGeneratorManager.getUserHomePage(driver);
         driver.manage().window().maximize();

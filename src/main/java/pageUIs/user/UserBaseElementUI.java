@@ -19,14 +19,7 @@ public class UserBaseElementUI {
     public static final String DYNAMIC_SECOND_MENU_BY_TEXT = "xpath=//ul[@class='top-menu notmobile']//a[contains(text(),'%s')]//following-sibling::ul//a[contains(text(),'%s')]";
     public static final String DYNAMIC_VALUE_BY_TEXT = "xpath=//div[@class='footer-block customer-service']//a[text()='%s']";
     public static final String AUTOMATICALLY_SEARCH_SUB_CATEGORIES_CHECKBOX = "xpath=//input[@id='isc']";
-
-
-
-
-
-
-
-
-
+    public static final String PRODUCT_NAME_TEXT = "xpath=//div[@class='products-container']//h2//a";
+    public static final String PRODUCT_PRICE_TEXT = "xpath=//div[@class='products-container']//span";
 
 }
