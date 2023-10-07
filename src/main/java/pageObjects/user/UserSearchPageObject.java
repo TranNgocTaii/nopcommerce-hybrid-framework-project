@@ -9,21 +9,22 @@ public class UserSearchPageObject extends BaseElement {
     private WebDriver driver;
 
     public UserSearchPageObject(WebDriver driver) {
+        super(driver);
         this.driver = driver;
     }
 
     public void clickToSearchButton() {
-        waitForElementClickable(driver, UserSearchPageUI.SEARCH_BUTTON);
-        clickToElement(driver, UserSearchPageUI.SEARCH_BUTTON);
+        waitForElementClickable(UserSearchPageUI.SEARCH_BUTTON);
+        clickToElement(UserSearchPageUI.SEARCH_BUTTON);
     }
 
     public String getWarningMessageAtSearchKeyword() {
-        waitForElementVisible(driver, UserSearchPageUI.SEARCH_KEYWORD_WARNING_MESSAGE);
-        return getElementText(driver, UserSearchPageUI.SEARCH_KEYWORD_WARNING_MESSAGE);
+        waitForElementVisible(UserSearchPageUI.SEARCH_KEYWORD_WARNING_MESSAGE);
+        return getElementText(UserSearchPageUI.SEARCH_KEYWORD_WARNING_MESSAGE);
     }
 
     public String getNoResultMessageAtSearchKeyword() {
-        waitForElementVisible(driver, UserSearchPageUI.SEARCH_KEYWORD_NO_RESULT_MESSAGE);
-        return getElementText(driver, UserSearchPageUI.SEARCH_KEYWORD_NO_RESULT_MESSAGE);
+        waitForElementVisible(UserSearchPageUI.SEARCH_KEYWORD_NO_RESULT_MESSAGE);
+        return getElementText(UserSearchPageUI.SEARCH_KEYWORD_NO_RESULT_MESSAGE);
     }
 }

@@ -4,22 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="deee99be-3851-4f75-8a02-5c99539af54c" name="Changes" comment="Search_function">
-      <change afterPath="$PROJECT_DIR$/src/main/java/commons/EnvironmentList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/testData/UserDataMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/UserData.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserSortDisplayPagingTest.java" afterDir="false" />
+    <list default="true" id="deee99be-3851-4f75-8a02-5c99539af54c" name="Changes" comment="SortDisplayPaging_function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/commons/BaseElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commons/BaseElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commons/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commons/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commons/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commons/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserAddressesPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserAddressesPageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserChangePasswordPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserChangePasswordPageObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserHomePageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserHomePageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageUIs/user/UserBaseElementUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageUIs/user/UserBaseElementUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageUIs/user/UserHomePageUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageUIs/user/UserHomePageUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/runNopcommerce.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/runNopcommerce.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserLoginPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserLoginPageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserMyAccountPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserMyAccountPageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserPageGeneratorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserPageGeneratorManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserProductDetailPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserProductDetailPageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserProductReviewPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserProductReviewPageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserRegisterPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserRegisterPageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserSearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserSearchPageObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserLoginTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserMyAccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserMyAccountTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserRegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserRegisterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserSearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserSearchTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserSortDisplayPagingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserSortDisplayPagingTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +100,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696658747641</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="SortDisplayPaging_function">
+      <option name="closed" value="true" />
+      <created>1696698907757</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696698907757</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -114,6 +125,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Custom close Browser Driver" />
     <MESSAGE value="Search_function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Search_function" />
+    <MESSAGE value="SortDisplayPaging_function" />
+    <option name="LAST_COMMIT_MESSAGE" value="SortDisplayPaging_function" />
   </component>
 </project>

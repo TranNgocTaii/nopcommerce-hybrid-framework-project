@@ -8,11 +8,12 @@ public class UserAddressesPageObject extends BaseElement {
     private WebDriver driver;
 
     public UserAddressesPageObject(WebDriver driver) {
+        super(driver);
         this.driver = driver;
     }
 
     public String getTitleAtAddressesPage() {
-        waitForElementVisible(driver, UserAddressesPageUI.TITLE_TEXT);
-        return getElementText(driver, UserAddressesPageUI.TITLE_TEXT);
+        waitForElementVisible(UserAddressesPageUI.TITLE_TEXT);
+        return getElementText(UserAddressesPageUI.TITLE_TEXT);
     }
 }
