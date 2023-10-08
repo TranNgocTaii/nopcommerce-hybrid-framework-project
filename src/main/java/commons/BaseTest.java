@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-public class BaseTest {
+public abstract class BaseTest {
     private WebDriver driver;
     public WebDriver getDriverInstance() {
         return this.driver;

@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-public class BasePage {
+public abstract class BasePage {
     private WebDriver driver;
     private long longTimeout = GlobalConstants.LONG_TIMEOUT;
     private long shortTimeout = GlobalConstants.SHORT_TIMEOUT;

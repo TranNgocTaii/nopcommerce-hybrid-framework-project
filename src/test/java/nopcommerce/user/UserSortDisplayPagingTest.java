@@ -36,7 +36,7 @@ public class UserSortDisplayPagingTest extends BaseTest {
     @Test
     public void TC_24_Sort_With_Name_A_To_Z(Method method){
         ExtentTestManager.startTest(method.getName(),"Sort_Display_Paging_Function");
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Sort with value is A to Z");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Sort with value is 'A to Z'");
         userHomePage.selectToDropDownByName("products-orderby", "Name: A to Z");
         userHomePage.sleepInSecond(3);
 
@@ -47,7 +47,7 @@ public class UserSortDisplayPagingTest extends BaseTest {
     @Test
     public void TC_25_Sort_With_Name_Z_To_A(Method method){
         ExtentTestManager.startTest(method.getName(),"Sort_Display_Paging_Function");
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Sort with value is Z to A");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Sort with value is 'Z to A'");
         userHomePage.selectToDropDownByName("products-orderby", "Name: Z to A");
         userHomePage.sleepInSecond(3);
 
@@ -58,7 +58,7 @@ public class UserSortDisplayPagingTest extends BaseTest {
     @Test
     public void TC_26_Sort_With_Price_Low_To_High(Method method){
         ExtentTestManager.startTest(method.getName(),"Sort_Display_Paging_Function");
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Sort with value is Low to High");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Sort with value is 'Low to High'");
         userHomePage.selectToDropDownByName("products-orderby", "Price: Low to High");
         userHomePage.sleepInSecond(3);
 
@@ -69,7 +69,7 @@ public class UserSortDisplayPagingTest extends BaseTest {
     @Test
     public void TC_27_Sort_With_Price_High_To_Low(Method method){
         ExtentTestManager.startTest(method.getName(),"Sort_Display_Paging_Function");
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Sort with value is High to Low");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Sort with value is 'High to Low'");
         userHomePage.selectToDropDownByName("products-orderby", "Price: High to Low");
         userHomePage.sleepInSecond(3);
 
@@ -80,7 +80,7 @@ public class UserSortDisplayPagingTest extends BaseTest {
     @Test
     public void TC_28_Display_With_3_Product(Method method){
         ExtentTestManager.startTest(method.getName(),"Sort_Display_Paging_Function");
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Select page size with value is 3");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Select page size with value is '3'");
         userHomePage.selectToDropDownByName("products-pagesize", "3");
         userHomePage.sleepInSecond(3);
 
@@ -101,7 +101,7 @@ public class UserSortDisplayPagingTest extends BaseTest {
     @Test
     public void TC_29_Display_With_6_Product(Method method){
         ExtentTestManager.startTest(method.getName(),"Sort_Display_Paging_Function");
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Select page size with value is 6");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Select page size with value is '6'");
         userHomePage.selectToDropDownByName("products-pagesize", "6");
         userHomePage.sleepInSecond(3);
 
@@ -115,7 +115,7 @@ public class UserSortDisplayPagingTest extends BaseTest {
     @Test
     public void TC_30_Display_With_9_Product(Method method){
         ExtentTestManager.startTest(method.getName(),"Sort_Display_Paging_Function");
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Select page size with value is 9");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Select page size with value is '9'");
         userHomePage.selectToDropDownByName("products-pagesize", "9");
         userHomePage.sleepInSecond(3);
 

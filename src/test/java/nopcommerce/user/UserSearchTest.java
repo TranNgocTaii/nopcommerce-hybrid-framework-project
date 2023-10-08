@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 import pageObjects.user.*;
 import pageUIs.user.UserBaseElementUI;
 import reportConfigs.ExtentTestManager;
+import testData.UserMyAccountDataMapper;
 
 import java.lang.reflect.Method;
 import java.util.Random;
@@ -21,6 +22,7 @@ public class UserSearchTest extends BaseTest {
     private UserHomePageObject userHomePage;
     private UserLoginPageObject userLoginPage;
     private UserSearchPageObject userSearchPage;
+    private UserMyAccountDataMapper userMyAccountData;
 
     @Parameters({"browser", "environment"})
     @BeforeClass
@@ -28,6 +30,7 @@ public class UserSearchTest extends BaseTest {
         driver = getBrowserDriver(browserName, environmentName);
 
         userHomePage = UserPageGeneratorManager.getUserHomePage(driver);
+        userMyAccountData = UserMyAccountDataMapper.getMyAccountUserData();
 
         driver.manage().window().maximize();
 
@@ -35,7 +38,7 @@ public class UserSearchTest extends BaseTest {
 
         userLoginPage.inputToTextboxById("Email", UserRegisterTest.validEmail);
 
-        userLoginPage.inputToTextboxById("Password", UserMyAccountTest.newPassword);
+        userLoginPage.inputToTextboxById("Password", userMyAccountData.getNewPassword());
 
         userHomePage = userLoginPage.clickToLoginButton();
         userSearchPage = (UserSearchPageObject) userHomePage.selectOptionAtCustomerServiceFooter("Search");
@@ -50,65 +53,65 @@ public class UserSearchTest extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO,"Search - Step 02: Click to search button");
         userSearchPage.clickToSearchButton();
 
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 03: Verify that the warning message displayed with value is Search term minimum length is 3 characters");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 03: Verify that the warning message displayed with value is 'Search term minimum length is 3 characters'");
         Assert.assertEquals(userSearchPage.getWarningMessageAtSearchKeyword(), "Search term minimum length is 3 characters");
     }
 
     @Test
     public void TC_17_Search_With_Data_Not_Exist(Method method) {
         ExtentTestManager.startTest(method.getName(),"Search_Function");
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Search with value is Macbook Pro 250");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Search with value is 'Macbook Pro 250'");
         userSearchPage.inputToTextboxById("q", "Macbook Pro 250");
 
         ExtentTestManager.getTest().log(Status.INFO,"Search - Step 02: Click to search button");
         userSearchPage.clickToSearchButton();
 
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 03: Verify that the no result message displayed with value is No products were found that matched your criteria.");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 03: Verify that the no result message displayed with value is 'No products were found that matched your criteria.'");
         Assert.assertEquals(userSearchPage.getNoResultMessageAtSearchKeyword(), "No products were found that matched your criteria.");
     }
 
     @Test
     public void TC_18_Search_With_Product_Name_Is_Lenovo(Method method) {
         ExtentTestManager.startTest(method.getName(),"Search_Function");
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Search with value is Lenovo");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Search with value is 'Lenovo'");
         userSearchPage.inputToTextboxById("q", "Lenovo");
 
         ExtentTestManager.getTest().log(Status.INFO,"Search - Step 02: Click to search button");
         userSearchPage.clickToSearchButton();
 
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 03: Verify that the product is displayed with value is Show details for Lenovo IdeaCentre 600 All-in-One PC");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 03: Verify that the product is displayed with value is 'Lenovo IdeaCentre 600 All-in-One PC'");
         Assert.assertTrue(userSearchPage.isTheProductDislayedByTitle("Show details for Lenovo IdeaCentre 600 All-in-One PC"));
 
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 04: Verify that the product is displayed with value is Show details for Lenovo Thinkpad X1 Carbon Laptop");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 04: Verify that the product is displayed with value is 'Lenovo Thinkpad X1 Carbon Laptop'");
         Assert.assertTrue(userSearchPage.isTheProductDislayedByTitle("Show details for Lenovo Thinkpad X1 Carbon Laptop"));
     }
 
     @Test
     public void TC_19_Search_With_Product_Name_Is_Lenovo_Thinkpad_X1_Carbon_Laptop(Method method) {
         ExtentTestManager.startTest(method.getName(),"Search_Function");
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Search with value is Lenovo Thinkpad x1 Carbon Laptop");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Search with value is 'Lenovo Thinkpad x1 Carbon Laptop'");
         userSearchPage.inputToTextboxById("q", "Lenovo Thinkpad x1 Carbon Laptop");
 
         ExtentTestManager.getTest().log(Status.INFO,"Search - Step 02: Click to search button");
         userSearchPage.clickToSearchButton();
 
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 03: Verify that the product is displayed with value is Show details for Lenovo Thinkpad X1 Carbon Laptop");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 03: Verify that the product is displayed with value is 'Lenovo Thinkpad X1 Carbon Laptop'");
         Assert.assertTrue(userSearchPage.isTheProductDislayedByTitle("Show details for Lenovo Thinkpad X1 Carbon Laptop"));
     }
 
     @Test
     public void TC_20_Advanced_Search_With_Parent_Categories(Method method) {
         ExtentTestManager.startTest(method.getName(),"Search_Function");
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Search with value is Apple Macbook Pro");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Search with value is 'Apple Macbook Pro'");
         userSearchPage.inputToTextboxById("q", "Apple Macbook Pro");
 
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 02: Check to Advanced search");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 02: Check to 'Advanced search'");
         userSearchPage.checkToDefaultCheckboxRadio(UserBaseElementUI.ADVANCED_SEARCH_CHECKBOX);
 
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 03: Verify that Advanced search is selected");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 03: Verify that Advanced search is 'selected'");
         Assert.assertTrue(userSearchPage.isElementSelected(UserBaseElementUI.ADVANCED_SEARCH_CHECKBOX));
 
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 04: Select Category with value is Computers");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 04: Select Category with value is 'Computers'");
         userSearchPage.selectToDropDownByName("cid", "Computers");
 
         ExtentTestManager.getTest().log(Status.INFO,"Search - Step 05: Verify that the selected item is displayed");
@@ -117,17 +120,17 @@ public class UserSearchTest extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO,"Search - Step 06: Check Automatically search sub categories checkbox is unselected");
         Assert.assertFalse(userSearchPage.isElementSelected(UserBaseElementUI.AUTOMATICALLY_SEARCH_SUB_CATEGORIES_CHECKBOX));
 
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 07: Click to search button");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 07: Click to 'search' button");
         userSearchPage.clickToSearchButton();
 
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 08: Verify that the no result message displayed with value is No products were found that matched your criteria.");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 08: Verify that the no result message displayed with value is 'No products were found that matched your criteria.'");
         Assert.assertEquals(userSearchPage.getNoResultMessageAtSearchKeyword(), "No products were found that matched your criteria.");
     }
 
     @Test
     public void TC_21_Advanced_Search_With_Sub_Categories(Method method) {
         ExtentTestManager.startTest(method.getName(),"Search_Function");
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Search with value is Apple Macbook Pro");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Search with value is 'Apple Macbook Pro'");
         userSearchPage.inputToTextboxById("q", "Apple Macbook Pro");
 
         ExtentTestManager.getTest().log(Status.INFO,"Search - Step 02: Verify that Advanced search is selected");
@@ -139,17 +142,17 @@ public class UserSearchTest extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO,"Search - Step 04: Check to Automatically search sub categories");
         userSearchPage.checkToDefaultCheckboxRadio(UserBaseElementUI.AUTOMATICALLY_SEARCH_SUB_CATEGORIES_CHECKBOX);
 
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 05: Click to search button");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 05: Click to 'search' button");
         userSearchPage.clickToSearchButton();
 
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 08: Verify that the product displayed with value is Show details for Apple MacBook Pro 13-inch");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 08: Verify that the product displayed with value is 'Apple MacBook Pro 13-inch'");
         Assert.assertTrue(userSearchPage.isTheProductDislayedByTitle("Show details for Apple MacBook Pro 13-inch"));
     }
 
     @Test
     public void TC_22_Advanced_Search_With_Incorrect_Manufacturer(Method method) {
         ExtentTestManager.startTest(method.getName(),"Search_Function");
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Search with value is Apple Macbook Pro");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Search with value is 'Apple Macbook Pro'");
         userSearchPage.inputToTextboxById("q", "Apple Macbook Pro");
 
         ExtentTestManager.getTest().log(Status.INFO,"Search - Step 02: Verify that Advanced search is selected");
@@ -161,20 +164,20 @@ public class UserSearchTest extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO,"Search - Step 04: Verify that Automatically search sub categories at is selected");
         Assert.assertTrue(userSearchPage.isElementSelected(UserBaseElementUI.AUTOMATICALLY_SEARCH_SUB_CATEGORIES_CHECKBOX));
 
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 05: Select Manufacturer with value is HP");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 05: Select Manufacturer with value is 'HP'");
         userSearchPage.selectToDropDownByName("mid", "HP");
 
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 06: Click to search button");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 06: Click to 'search' button");
         userSearchPage.clickToSearchButton();
 
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 07: Verify that the no result message displayed with value is No products were found that matched your criteria.");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 07: Verify that the no result message displayed with value is 'No products were found that matched your criteria.'");
         Assert.assertEquals(userSearchPage.getNoResultMessageAtSearchKeyword(), "No products were found that matched your criteria.");
     }
 
     @Test
     public void TC_23_Advanced_Search_With_Correct_Manufacturer(Method method) {
         ExtentTestManager.startTest(method.getName(),"Search_Function");
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Search with value is Apple Macbook Pro");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 01: Search with value is 'Apple Macbook Pro'");
         userSearchPage.inputToTextboxById("q", "Apple Macbook Pro");
 
         ExtentTestManager.getTest().log(Status.INFO,"Search - Step 02: Verify that Advanced search is selected");
@@ -186,13 +189,13 @@ public class UserSearchTest extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO,"Search - Step 04: Verify that Automatically search sub categories at is selected");
         Assert.assertTrue(userSearchPage.isElementSelected(UserBaseElementUI.AUTOMATICALLY_SEARCH_SUB_CATEGORIES_CHECKBOX));
 
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 05: Select Manufacturer with value is Apple");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 05: Select Manufacturer with value is 'Apple'");
         userSearchPage.selectToDropDownByName("mid", "Apple");
 
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 06: Click to search button");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 06: Click to 'search' button");
         userSearchPage.clickToSearchButton();
 
-        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 07: Verify that the product displayed with value is Show details for Apple MacBook Pro 13-inch");
+        ExtentTestManager.getTest().log(Status.INFO,"Search - Step 07: Verify that the product displayed with value is 'Apple MacBook Pro 13-inch'");
         Assert.assertTrue(userSearchPage.isTheProductDislayedByTitle("Show details for Apple MacBook Pro 13-inch"));
     }
 

@@ -38,5 +38,4 @@ public class UserPageGeneratorManager {
     public static UserProductReviewPageObject getUserProductReviewPage(WebDriver driver) {
         return new UserProductReviewPageObject(driver);
     }
-
 }

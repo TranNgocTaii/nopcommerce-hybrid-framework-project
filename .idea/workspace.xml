@@ -4,20 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="deee99be-3851-4f75-8a02-5c99539af54c" name="Changes" comment="SortDisplayPaging_function">
+    <list default="true" id="deee99be-3851-4f75-8a02-5c99539af54c" name="Changes" comment="Update Constructor">
+      <change afterPath="$PROJECT_DIR$/src/main/java/testData/UserMyAccountDataMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/testData/UserRegisterDataMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/UserMyAccountData.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/UserRegisterData.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commons/BaseElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commons/BaseElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commons/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commons/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserAddressesPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserAddressesPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserChangePasswordPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserChangePasswordPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserHomePageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserHomePageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserLoginPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserLoginPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserMyAccountPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserMyAccountPageObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserPageGeneratorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserPageGeneratorManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserProductDetailPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserProductDetailPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserProductReviewPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserProductReviewPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserRegisterPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserRegisterPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserSearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserSearchPageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testData/UserDataMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testData/UserLoginDataMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/UserData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/UserLoginData.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserLoginTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserMyAccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserMyAccountTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserRegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserRegisterTest.java" afterDir="false" />
@@ -46,18 +41,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/tranngoctai/IdeaProjects/Selenium_Online_28/08 - Real Project/nopcommerce-hybrid-framework-project&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Master",
+    "last_opened_file_path": "/Users/tranngoctai/IdeaProjects/Selenium_Online_28/08 - Real Project/nopcommerce-hybrid-framework-project/src/test/resources",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="testData" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="/Users/tranngoctai/IdeaProjects/Selenium_Online_28/08 - Real Project/nopcommerce-hybrid-framework-project/src/main/resources/runNopcommerce.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="nopcommerce-hybrid-framework-project" />
@@ -108,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696698907757</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update Constructor">
+      <option name="closed" value="true" />
+      <created>1696702101927</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696702101927</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,6 +141,7 @@
     <MESSAGE value="Custom close Browser Driver" />
     <MESSAGE value="Search_function" />
     <MESSAGE value="SortDisplayPaging_function" />
-    <option name="LAST_COMMIT_MESSAGE" value="SortDisplayPaging_function" />
+    <MESSAGE value="Update Constructor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Constructor" />
   </component>
 </project>

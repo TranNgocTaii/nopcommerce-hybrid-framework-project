@@ -1,0 +1,26 @@
+{
+  "firstName" : "DEMO",
+  "lastName" : "NOPCOMMERCE",
+  "email" : "demonopcommerce",
+  "emailAddress" : "demonopcommerce",
+  "companyName" : "nopcommerce company",
+
+  "addressFirstName" : "demo",
+  "addressLastName" : "nopcommerce",
+  "name" : "demo nopcommerce",
+  "phoneNumber" : "0123456789",
+  "faxNumber" : "0987654321",
+  "addressCompany" : "demonopcommerce company",
+  "address1" : "100 Su Van Hanh, Quan 10",
+  "addressCity" : "Ho Chi Minh",
+  "addressZipPostalCode" : "550000",
+  "country" : "Viet Nam",
+
+  "oldPassword" : "123456demo",
+  "newPassword" : "123456nopcommerce",
+  "confirmPassword" : "123456nopcommerce",
+
+  "day" : "21",
+  "month" : "June",
+  "year" : "2001"
+}

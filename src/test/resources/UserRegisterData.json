@@ -1,0 +1,9 @@
+{
+  "invalidEmail" : "demonopcommerce@gmail@.com",
+  "firstName" : "demo",
+  "lastName" : "nopcommerce",
+  "validEmail" : "demonopcommerce",
+  "validPassword" : "123456demo",
+  "invalidPassword" : "12345",
+  "invalidConfirmPassword" : "1234"
+}

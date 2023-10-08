@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class BaseElement extends BasePage {
+public abstract class BaseElement extends BasePage {
     private WebDriver driver;
     public BaseElement(WebDriver driver) {
         super(driver);

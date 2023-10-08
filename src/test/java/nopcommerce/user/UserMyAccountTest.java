@@ -13,6 +13,7 @@ import pageUIs.user.UserBaseElementUI;
 import pageUIs.user.UserChangePasswordPageUI;
 import pageUIs.user.UserProductReviewPageUI;
 import reportConfigs.ExtentTestManager;
+import testData.UserMyAccountDataMapper;
 import utilities.logs.Log;
 
 import java.lang.reflect.Method;
@@ -26,42 +27,20 @@ public class UserMyAccountTest extends BaseTest {
     private UserChangePasswordPageObject userChangePasswordPage;
     private UserProductDetailPageObject userProductDetailPage;
     private UserProductReviewPageObject userProductReviewPage;
-    private String firstName, lastName, email, companyName, emailAddress;
-    private String name, phoneNumber, faxNumber, addressCompany, address1, addressCity, country, addressZipPostalCode, addressFirstName, addressLastName;
-    static String oldPassword, newPassword, confirmPassword;
-    private String day, month, year;
+    private UserMyAccountDataMapper userMyAccountData;
+    private String email, emailAddress;
+
     @Parameters({"browser", "environment"})
     @BeforeClass
     public void beforeClass(String browserName, String environmentName) {
          driver = getBrowserDriver(browserName, environmentName);
 
         userHomePage = UserPageGeneratorManager.getUserHomePage(driver);
+        userMyAccountData = UserMyAccountDataMapper.getMyAccountUserData();
         driver.manage().window().maximize();
 
-        firstName = "DEMO";
-        lastName = "NOPCOMMERCE";
-        email = "demonopcommerce"+generateFakeNumber()+"@gmail.com";
-        emailAddress = "demonopcommerce"+generateFakeNumber()+"@gmail.com";
-        companyName = "nopcommerce company";
-
-        addressFirstName = "demo";
-        addressLastName ="nopcommerce";
-        name = addressFirstName + " " + addressLastName;
-        phoneNumber = "0123456789";
-        faxNumber = "0987654321";
-        addressCompany = "demonopcommerce company";
-        address1 = "100 Su Van Hanh, Quan 10";
-        addressCity = "Ho Chi Minh";
-        addressZipPostalCode = "550000";
-        country = "Viet Nam";
-
-        oldPassword = "123456demo";
-        newPassword = "123456nopcommerce";
-        confirmPassword = "123456nopcommerce";
-
-        day = "21";
-        month = "June";
-        year = "2001";
+        email = userMyAccountData.getEmail();
+        emailAddress = userMyAccountData.getEmailAddress();
 
         Log.info("Pre_Condition - Step 01: Navigate to 'Login' Page");
         userLoginPage = (UserLoginPageObject) userHomePage.clickToLinkByClass("ico-login");
@@ -85,47 +64,47 @@ public class UserMyAccountTest extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 02: Select Gender is male");
         userMyAccountPage.selectToRadioButtonById("gender-male");
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 03: Input to first name text box with value is " + firstName);
-        userMyAccountPage.inputToTextboxById("FirstName", firstName);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 03: Input to first name text box with value is '" + userMyAccountData.getFirstName() + "'");
+        userMyAccountPage.inputToTextboxById("FirstName", userMyAccountData.getFirstName());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 04: Input to last name text box with value is " + lastName);
-        userMyAccountPage.inputToTextboxById("LastName", lastName);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 04: Input to last name text box with value is '" + userMyAccountData.getLastName() + "'");
+        userMyAccountPage.inputToTextboxById("LastName", userMyAccountData.getLastName());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 05: Select day with value is " + day);
-        userMyAccountPage.selectToDropDownByName("DateOfBirthDay", day);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 05: Select day with value is '" + userMyAccountData.getDay() + "'");
+        userMyAccountPage.selectToDropDownByName("DateOfBirthDay", userMyAccountData.getDay());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 06: Select month with value is " + month);
-        userMyAccountPage.selectToDropDownByName("DateOfBirthMonth", month);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 06: Select month with value is '" + userMyAccountData.getMonth() + "'");
+        userMyAccountPage.selectToDropDownByName("DateOfBirthMonth", userMyAccountData.getMonth());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 07: Select year with value is " + year);
-        userMyAccountPage.selectToDropDownByName("DateOfBirthYear", year);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 07: Select year with value is '" + userMyAccountData.getYear() + "'");
+        userMyAccountPage.selectToDropDownByName("DateOfBirthYear", userMyAccountData.getYear());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 08: Input to email text box with value is " + email);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 08: Input to email text box with value is '" + email + "'");
         userMyAccountPage.inputToTextboxById("Email", email);
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 09: Input to company text box with value is " + companyName);
-        userMyAccountPage.inputToTextboxById("Company", companyName);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 09: Input to company text box with value is '" + userMyAccountData.getCompanyName() + "'");
+        userMyAccountPage.inputToTextboxById("Company", userMyAccountData.getCompanyName());
 
         ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 10: Click to save button");
         userMyAccountPage.clickToButtonById("save-info-button");
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 11: Verify that the message displayed with value is The customer info has been updated successfully.");
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 11: Verify that the message displayed with value is 'The customer info has been updated successfully.'");
         Assert.assertEquals(userMyAccountPage.getMessageByClass("content"), "The customer info has been updated successfully.");
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 12: Verify that the gender is Male");
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 12: Verify that the gender is 'Male'");
         userMyAccountPage.isElementSelected(UserBaseElementUI.DYNAMIC_TEXTBOX_BY_ID, "gender-male");
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 13: Verify that first name is " + firstName);
-        Assert.assertEquals(userMyAccountPage.getDynamicValueById("value", "FirstName"), firstName);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 13: Verify that first name is '" + userMyAccountData.getFirstName() + "'");
+        Assert.assertEquals(userMyAccountPage.getDynamicValueById("value", "FirstName"), userMyAccountData.getFirstName());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 14: Verify that last name is " + lastName);
-        Assert.assertEquals(userMyAccountPage.getDynamicValueById("value", "LastName"), lastName);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 14: Verify that last name is '" + userMyAccountData.getLastName() + "'");
+        Assert.assertEquals(userMyAccountPage.getDynamicValueById("value", "LastName"), userMyAccountData.getLastName());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 15: Verify that email is " + email);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 15: Verify that email is '" + email + "'");
         Assert.assertEquals(userMyAccountPage.getDynamicValueById("value", "Email"), email);
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 16: Verify that company name is " + companyName);
-        Assert.assertEquals(userMyAccountPage.getDynamicValueById("value", "Company"), companyName);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 16: Verify that company name is '" + userMyAccountData.getCompanyName() + "'");
+        Assert.assertEquals(userMyAccountPage.getDynamicValueById("value", "Company"), userMyAccountData.getCompanyName());
     }
 
     @Test
@@ -134,71 +113,71 @@ public class UserMyAccountTest extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 01: Navigate to 'Addresses' Page");
         userAddressesPage = (UserAddressesPageObject) userMyAccountPage.openPagesAtMyAccountByText("Addresses");
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 02: Verify that the header displayed with value is My account - Addresses");
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 02: Verify that the header displayed with value is 'My account - Addresses'");
         Assert.assertTrue(userAddressesPage.isElementDisplayed(UserBaseElementUI.DYNAMIC_HEADER_BY_TEXT, "My account - Addresses"));
 
         ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 03: Click to 'Add new' button");
         userAddressesPage.clickToButtonByText("Add new");
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 04: Input to first name text box with value is " + addressFirstName);
-        userAddressesPage.inputToTextboxById("Address_FirstName", addressFirstName);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 04: Input to first name text box with value is '" + userMyAccountData.getAddressFirstName() + "'");
+        userAddressesPage.inputToTextboxById("Address_FirstName", userMyAccountData.getAddressFirstName());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 05: Input to last name text box with value is " + addressLastName);
-        userAddressesPage.inputToTextboxById("Address_LastName", addressLastName);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 05: Input to last name text box with value is '" + userMyAccountData.getAddressLastName() + "'");
+        userAddressesPage.inputToTextboxById("Address_LastName", userMyAccountData.getAddressLastName());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 06: Input to email text box with value is " + emailAddress);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 06: Input to email text box with value is '" + emailAddress + "'");
         userAddressesPage.inputToTextboxById("Address_Email", emailAddress);
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 07: Input to company text box with value is " + addressCompany);
-        userAddressesPage.inputToTextboxById("Address_Company", addressCompany);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 07: Input to company text box with value is '" + userMyAccountData.getAddressCompany() + "'");
+        userAddressesPage.inputToTextboxById("Address_Company", userMyAccountData.getAddressCompany());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 08: Select country with value is " + country);
-        userAddressesPage.selectToDropDownByName("Address.CountryId", country);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 08: Select country with value is '" + userMyAccountData.getCountry() + "'");
+        userAddressesPage.selectToDropDownByName("Address.CountryId", userMyAccountData.getCountry());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 09: Input to address city text box with value is " + addressCity);
-        userAddressesPage.inputToTextboxById("Address_City", addressCity);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 09: Input to address city text box with value is '" + userMyAccountData.getAddressCity() + "'");
+        userAddressesPage.inputToTextboxById("Address_City", userMyAccountData.getAddressCity());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 10: Input to address1 text box with value is " + address1);
-        userAddressesPage.inputToTextboxById("Address_Address1", address1);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 10: Input to address1 text box with value is '" + userMyAccountData.getAddress1() + "'");
+        userAddressesPage.inputToTextboxById("Address_Address1", userMyAccountData.getAddress1());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 11: Input to Zip postal code text box with value is " + addressZipPostalCode);
-        userAddressesPage.inputToTextboxById("Address_ZipPostalCode", addressZipPostalCode);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 11: Input to Zip postal code text box with value is '" + userMyAccountData.getAddressZipPostalCode() + "'");
+        userAddressesPage.inputToTextboxById("Address_ZipPostalCode", userMyAccountData.getAddressZipPostalCode());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 12: Input to address phone number text box with value is " + phoneNumber);
-        userAddressesPage.inputToTextboxById("Address_PhoneNumber", phoneNumber);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 12: Input to address phone number text box with value is '" + userMyAccountData.getPhoneNumber() + "'");
+        userAddressesPage.inputToTextboxById("Address_PhoneNumber", userMyAccountData.getPhoneNumber());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 13: Input to address fax number text box with value is " + faxNumber);
-        userAddressesPage.inputToTextboxById("Address_FaxNumber", faxNumber);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 13: Input to address fax number text box with value is '" + userMyAccountData.getFaxNumber() + "'");
+        userAddressesPage.inputToTextboxById("Address_FaxNumber", userMyAccountData.getFaxNumber());
 
         ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 14: Click to Save button");
         userAddressesPage.clickToButtonByText("Save");
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 15: Verify that the title displayed with value is demo nopcommerce");
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 15: Verify that the title displayed with value is 'demo nopcommerce'");
         Assert.assertEquals(userAddressesPage.getTitleAtAddressesPage(),"demo nopcommerce");
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 16: Verify that the name displayed with value is " + name);
-        Assert.assertEquals(userAddressesPage.getDynamicValueByClass("name"), name);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 16: Verify that the name displayed with value is '" + userMyAccountData.getName() + "'");
+        Assert.assertEquals(userAddressesPage.getDynamicValueByClass("name"), userMyAccountData.getName());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 17: Verify that the email displayed with value is " + emailAddress);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 17: Verify that the email displayed with value is '" + emailAddress + "'");
         Assert.assertEquals(userAddressesPage.getDynamicValueByClass("email"), "Email: "+ emailAddress);
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 18: Verify that the phone number displayed with value is " + phoneNumber);
-        Assert.assertEquals(userAddressesPage.getDynamicValueByClass("phone"), "Phone number: " + phoneNumber);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 18: Verify that the phone number displayed with value is '" + userMyAccountData.getPhoneNumber() + "'");
+        Assert.assertEquals(userAddressesPage.getDynamicValueByClass("phone"), "Phone number: " + userMyAccountData.getPhoneNumber());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 19: Verify that the fax number displayed with value is " + faxNumber);
-        Assert.assertEquals(userAddressesPage.getDynamicValueByClass("fax"),"Fax number: " + faxNumber);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 19: Verify that the fax number displayed with value is '" + userMyAccountData.getFaxNumber() + "'");
+        Assert.assertEquals(userAddressesPage.getDynamicValueByClass("fax"),"Fax number: " + userMyAccountData.getFaxNumber());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 20: Verify that the address company displayed with value is " + addressCompany);
-        Assert.assertEquals(userAddressesPage.getDynamicValueByClass("company"),addressCompany);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 20: Verify that the address company displayed with value is '" + userMyAccountData.getAddressCompany() + "'");
+        Assert.assertEquals(userAddressesPage.getDynamicValueByClass("company"),userMyAccountData.getAddressCompany());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 21: Verify that the address1 displayed with value is " + address1);
-        Assert.assertEquals(userAddressesPage.getDynamicValueByClass("address1"),address1);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 21: Verify that the address1 displayed with value is '" + userMyAccountData.getAddress1() + "'");
+        Assert.assertEquals(userAddressesPage.getDynamicValueByClass("address1"),userMyAccountData.getAddress1());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 22: Verify that the city-state-zip displayed with value is " + addressCity + ", " + addressZipPostalCode);
-        Assert.assertEquals(userAddressesPage.getDynamicValueByClass("city-state-zip"),addressCity + ", " + addressZipPostalCode);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 22: Verify that the city-state-zip displayed with value is '" + userMyAccountData.getAddressCity() + ", " + userMyAccountData.getAddressZipPostalCode() + "'");
+        Assert.assertEquals(userAddressesPage.getDynamicValueByClass("city-state-zip"),userMyAccountData.getAddressCity() + ", " + userMyAccountData.getAddressZipPostalCode());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 23: Verify that the country displayed with value is " + country);
-        Assert.assertEquals(userAddressesPage.getDynamicValueByClass("country"),country);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 23: Verify that the country displayed with value is '" + userMyAccountData.getCountry() + "'");
+        Assert.assertEquals(userAddressesPage.getDynamicValueByClass("country"), userMyAccountData.getCountry());
     }
 
     @Test
@@ -208,22 +187,22 @@ public class UserMyAccountTest extends BaseTest {
         userChangePasswordPage = (UserChangePasswordPageObject) userAddressesPage.openPagesAtMyAccountByText("Change password");
 
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 02: Verify that the header displayed with value is My account - Change password");
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 02: Verify that the header displayed with value is 'My account - Change password'");
         Assert.assertTrue(userChangePasswordPage.isElementDisplayed(UserBaseElementUI.DYNAMIC_HEADER_BY_TEXT, "My account - Change password"));
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 03: Input to old password text box with value is " + oldPassword);
-        userChangePasswordPage.inputToTextboxById("OldPassword", oldPassword);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 03: Input to old password text box with value is '" + userMyAccountData.getOldPassword() + "'");
+        userChangePasswordPage.inputToTextboxById("OldPassword", userMyAccountData.getOldPassword());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 04: Input to new password text box with value is " + newPassword);
-        userChangePasswordPage.inputToTextboxById("NewPassword", newPassword);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 04: Input to new password text box with value is '" + userMyAccountData.getNewPassword() + "'");
+        userChangePasswordPage.inputToTextboxById("NewPassword", userMyAccountData.getNewPassword());
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 05: Input to confirm password text box with value is " + confirmPassword);
-        userChangePasswordPage.inputToTextboxById("ConfirmNewPassword", confirmPassword);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 05: Input to confirm password text box with value is '" + userMyAccountData.getConfirmPassword() + "'");
+        userChangePasswordPage.inputToTextboxById("ConfirmNewPassword", userMyAccountData.getConfirmPassword());
 
         ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 06: Click to change password button");
         userChangePasswordPage.clickToButtonByText("Change password");
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 07: Verify that the message displayed with value is Password was changed");
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 07: Verify that the message displayed with value is 'Password was changed'");
         Assert.assertEquals(userChangePasswordPage.getMessageByClass( "content"), "Password was changed");
 
         ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 08: Click to close icon");
@@ -235,17 +214,17 @@ public class UserMyAccountTest extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 10: Navigate to 'Log in' Page");
         userLoginPage = (UserLoginPageObject) userHomePage.clickToLinkByClass("ico-login");
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 11: Input to email text box with value is " + email);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 11: Input to email text box with value is '" + email + "'");
         userLoginPage.inputToTextboxById("Email", email);
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 12: Input to old password text box with value is " + oldPassword);
-        userLoginPage.inputToTextboxById("Password", oldPassword);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 12: Input to old password text box with value is '" + userMyAccountData.getOldPassword() + "'");
+        userLoginPage.inputToTextboxById("Password", userMyAccountData.getOldPassword());
 
         ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 13: Click to login button");
         userLoginPage.clickToLoginButton();
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 14: Input to new password text box with value is " + newPassword);
-        userLoginPage.inputToTextboxById("Password", newPassword);
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 14: Input to new password text box with value is '" + userMyAccountData.getNewPassword() + "'");
+        userLoginPage.inputToTextboxById("Password", userMyAccountData.getNewPassword());
 
         ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 15: Click to login button");
         userHomePage = userLoginPage.clickToLoginButton();
@@ -266,19 +245,19 @@ public class UserMyAccountTest extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 04: Click to add your review link");
         userProductReviewPage = userProductDetailPage.clickToAddYourReview();
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 05: Input to review title text box with value is Build your own computer");
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 05: Input to review title text box with value is 'Build your own computer'");
         userProductReviewPage.inputToTextboxById("AddProductReview_Title", "Build your own computer");
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 06: Input to review text text box with value is This computer is good");
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 06: Input to review text text box with value is 'This computer is good'");
         userProductReviewPage.inputToReviewText("This computer is good");
 
         ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 07: Click to submit review button");
         userProductReviewPage.clickToButtonByText("Submit review");
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 08: Verify that the review title displayed with value is Build your own computer");
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 08: Verify that the review title displayed with value is 'Build your own computer'");
         Assert.assertTrue(userProductReviewPage.isElementDisplayed(UserProductReviewPageUI.REVIEW_TITLE, "Build your own computer"));
 
-        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 09: Verify that the review text displayed with value is This computer is good");
+        ExtentTestManager.getTest().log(Status.INFO,"My_Account - Step 09: Verify that the review text displayed with value is 'This computer is good'");
         Assert.assertTrue(userProductReviewPage.isElementDisplayed(UserProductReviewPageUI.REVIEW_TEXT, "This computer is good"));
     }
 
