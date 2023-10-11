@@ -21,5 +21,6 @@ public class UserBaseElementUI {
     public static final String AUTOMATICALLY_SEARCH_SUB_CATEGORIES_CHECKBOX = "xpath=//input[@id='isc']";
     public static final String PRODUCT_NAME_TEXT = "xpath=//div[@class='products-container']//h2//a";
     public static final String PRODUCT_PRICE_TEXT = "xpath=//div[@class='products-container']//span";
+    public static final String UPLOAD_FILE = "xpath=//input[@type='file']";
 
 }

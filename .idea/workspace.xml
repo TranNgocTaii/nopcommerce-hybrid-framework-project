@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="deee99be-3851-4f75-8a02-5c99539af54c" name="Changes" comment="Update Constructor">
-      <change afterPath="$PROJECT_DIR$/src/main/java/testData/UserMyAccountDataMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/testData/UserRegisterDataMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/UserMyAccountData.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/UserRegisterData.json" afterDir="false" />
+    <list default="true" id="deee99be-3851-4f75-8a02-5c99539af54c" name="Changes" comment="Using external file">
+      <change afterPath="$PROJECT_DIR$/src/main/java/commons/main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserPageGeneratorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pageObjects/user/UserPageGeneratorManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/testData/UserDataMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testData/UserLoginDataMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/UserData.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/UserLoginData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserLoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserMyAccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserMyAccountTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserRegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserRegisterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserSearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserSearchTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserSortDisplayPagingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nopcommerce/user/UserSortDisplayPagingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commons/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commons/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/runNopcommerce.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/runNopcommerce.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,13 +18,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2VvJmbPQ3mR4Wl0JWyPM4AbzcNP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -65,7 +59,59 @@
       <recent name="testData" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.main">
+    <configuration name="Aminals" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="commons.Aminals" />
+      <module name="nopcommerce-hybrid-framework-project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="commons.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Student" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="commons.Student" />
+      <module name="nopcommerce-hybrid-framework-project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="commons.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Thaycacac" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="commons.Thaycacac" />
+      <module name="nopcommerce-hybrid-framework-project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="commons.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="commons.main" />
+      <module name="nopcommerce-hybrid-framework-project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="commons.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="/Users/tranngoctai/IdeaProjects/Selenium_Online_28/08 - Real Project/nopcommerce-hybrid-framework-project/src/main/resources/runNopcommerce.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="nopcommerce-hybrid-framework-project" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/main/resources/runNopcommerce.xml" />
@@ -78,7 +124,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.main" />
         <item itemvalue="TestNG./Users/tranngoctai/IdeaProjects/Selenium_Online_28/08 - Real Project/nopcommerce-hybrid-framework-project/src/main/resources/runNopcommerce.xml" />
+        <item itemvalue="Application.Aminals" />
+        <item itemvalue="Application.Student" />
+        <item itemvalue="Application.Thaycacac" />
       </list>
     </recent_temporary>
   </component>
@@ -123,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696702101927</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Using external file">
+      <option name="closed" value="true" />
+      <created>1696756454872</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696756454872</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -142,6 +200,7 @@
     <MESSAGE value="Search_function" />
     <MESSAGE value="SortDisplayPaging_function" />
     <MESSAGE value="Update Constructor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Constructor" />
+    <MESSAGE value="Using external file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Using external file" />
   </component>
 </project>

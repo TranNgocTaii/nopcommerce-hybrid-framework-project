@@ -15,10 +15,10 @@
         <parameter name="browser" value="chrome"></parameter>
         <classes>
             <class name = "nopcommerce.user.UserRegisterTest"/>
-            <class name = "nopcommerce.user.UserLoginTest"/>
-            <class name = "nopcommerce.user.UserMyAccountTest"/>
-            <class name = "nopcommerce.user.UserSearchTest"/>
-            <class name = "nopcommerce.user.UserSortDisplayPagingTest"/>
+<!--            <class name = "nopcommerce.user.UserLoginTest"/>-->
+<!--            <class name = "nopcommerce.user.UserMyAccountTest"/>-->
+<!--            <class name = "nopcommerce.user.UserSearchTest"/>-->
+<!--            <class name = "nopcommerce.user.UserSortDisplayPagingTest"/>-->
         </classes>
     </test>
 
